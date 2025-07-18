@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production
     steps:
     - name: Echo secrets
       run: |
@@ -47,6 +48,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment: production
     steps:
     - uses: actions/checkout@v4
     - name: Download build artifacts
